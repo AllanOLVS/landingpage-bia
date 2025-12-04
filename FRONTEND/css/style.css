@@ -102,10 +102,32 @@ body {
     border-radius: 10px; 
 }
 
-.prev, .next {
-    display: none;
+/* ---------------------------------------------------- */
+/* ESTILOS DA GALERIA (TELA 2 - MOVEMOS PARA O CSS EXTERNO) */
+/* ---------------------------------------------------- */
+
+.gallery {
+    display: grid;
+    /* Padrão desktop: 3 colunas, mínimo de 300px */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+.gallery img {
+    width: 100%;
+    height: 300px; /* Altura fixa para as imagens */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
 
 /* ---------------------------------------------------- */
 /* MEDIA QUERIES PARA RESPONSIVIDADE */
@@ -120,6 +142,7 @@ body {
     .main-header h1 {
         font-size: 1.2em;
         margin-bottom: 20px;
+        line-height: 1.2; /* Melhora a quebra de linha do título longo */
     }
 
     /* Botões */
@@ -131,25 +154,33 @@ body {
     .nav-button {
         padding: 10px 20px;
         font-size: 1.0em;
-        width: 90%; 
+        width: 80%; /* Ajuste para ter um pequeno respiro */
+        margin: 0 auto;
     }
 
-    /* Carrossel (Embla) */
+    /* Carrossel (Embla) - Tela 1 */
     .carousel-section {
         width: 100%;
-        padding: 15px; /* Ajuste do padding do container rosa */
+        padding: 15px;
     }
     .embla__viewport {
-        min-height: 300px; 
+        min-height: 250px; /* Redução de altura */
     }
     .embla__slide {
-        /* Slide ocupa 95% do viewport */
-        flex: 0 0 95%; 
+        flex: 0 0 95%; /* Quase ocupa a tela toda */
         margin-left: 5px;
     }
     .embla__slide__img {
-        height: 300px;
-        max-height: 300px;
+        height: 250px; /* Altura menor para telas muito pequenas */
+    }
+
+    /* GALERIA DE FOTOS (Tela 2) - UMA COLUNA */
+    .gallery {
+        grid-template-columns: 1fr; /* Força 1 coluna em 320px */
+        padding: 10px;
+    }
+    .gallery img {
+        height: 250px; /* Altura ajustada */
     }
 }
 
@@ -159,6 +190,7 @@ body {
     .main-header h1 {
         font-size: 1.5em;
         margin-bottom: 30px;
+        line-height: 1.3;
     }
 
     /* Botões */
@@ -171,25 +203,35 @@ body {
         padding: 15px 30px;
         font-size: 1.2em;
         width: 80%; 
+        margin: 0 auto;
     }
 
-    /* Carrossel (Embla) */
+    /* Carrossel (Embla) - Tela 1 */
     .carousel-section {
         width: 100%;
         max-width: none;
-        padding: 20px; /* Ajuste do padding do container rosa */
+        padding: 20px;
     }
     .embla__viewport {
         min-height: 350px;
     }
     .embla__slide {
-        /* Slide ocupa 85% do viewport */
-        flex: 0 0 85%; 
+        flex: 0 0 85%; /* Peek padrão para celular */
         margin-left: 10px;
     }
     .embla__slide__img {
         height: 350px;
         max-height: 400px;
+    }
+    
+    /* GALERIA DE FOTOS (Tela 2) - UMA COLUNA */
+    /* Sobrescreve o max-width: 320px, mas mantém 1 coluna. */
+    .gallery {
+        grid-template-columns: 1fr; /* Força 1 coluna */
+        padding: 15px;
+    }
+    .gallery img {
+        height: 300px;
     }
 }
 
@@ -209,22 +251,31 @@ body {
         font-size: 1.3em;
     }
 
-    /* Carrossel (Embla) */
+    /* Carrossel (Embla) - Tela 1 */
     .carousel-section {
         width: 95%;
         max-width: 760px;
-        padding: 25px; /* Ajuste do padding do container rosa */
+        padding: 25px;
     }
     .embla__viewport {
-        min-height: 450px;
+        min-height: 400px; /* Altura ajustada */
     }
     .embla__slide {
-        /* Peek padrão para tablets */
-        flex: 0 0 80%; 
+        flex: 0 0 75%; /* Mais peek em tablet */
         margin-left: 15px;
     }
     .embla__slide__img {
-        height: 450px;
-        max-height: 500px;
+        height: 400px;
+        max-height: 450px;
+    }
+    
+    /* GALERIA DE FOTOS (Tela 2) - DUAS COLUNAS */
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas em tablets */
+        gap: 15px;
+        padding: 20px;
+    }
+    .gallery img {
+        height: 250px; /* Altura ajustada para 2 colunas */
     }
 }
