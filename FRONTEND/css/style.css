@@ -1,0 +1,230 @@
+/* ---------------------------------------------------- */
+/* ESTILOS BASE (PADRÃO PARA DESKTOPS E TELAS GRANDES) */
+/* ---------------------------------------------------- */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fce4ec; 
+    color: #4a148c; 
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('../images/heart-icon2.png');
+    background-repeat: repeat;
+    background-size: 50px 50px;
+    background-attachment: fixed;
+}
+
+/* Estilo do Título Principal */
+.main-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #880e4f; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 900;
+}
+
+/* Estilo da Seção de Botões */
+.buttons-section {
+    display: flex;
+    gap: 30px; 
+    margin-top: 50px; 
+    margin-bottom: 20px; 
+    justify-content: center;
+}
+
+/* Estilo dos Botões */
+.nav-button {
+    display: inline-block;
+    padding: 20px 40px;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background-color: #ff80ab;
+    border-radius: 15px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-button:hover {
+    background-color: #ff4081;
+    transform: translateY(-2px);
+}
+
+/* Estilo da Seção de Carrossel - O NOVO CONTAINER ROSA CLARO E ELEGANTE */
+.carousel-section {
+    width: 90%;
+    max-width: 800px;
+    margin-top: 0; 
+    margin-bottom: 0;
+    
+    /* ESTILOS DO NOVO CONTAINER VISUAL */
+    background-color: #fff0f5; /* Rosa Claro Suave (Blush) */
+    padding: 30px; 
+    border-radius: 20px; 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+}
+
+/* --- ESTILOS EMBLA CAROUSEL (LOOP E PEEK PADRÃO) --- */
+
+.embla__viewport {
+    overflow: hidden;
+    min-height: 500px; 
+}
+
+.embla__container {
+    display: flex;
+    user-select: none;
+}
+
+.embla__slide {
+    /* Desktop: 80% do viewport, cria o peek de 10% em cada lado */
+    flex: 0 0 80%; 
+    min-width: 0; 
+    margin-left: 20px; /* Espaço entre as imagens no desktop */
+}
+
+.embla__slide:first-child {
+    margin-left: 0;
+}
+
+.embla__slide__img {
+    display: block;
+    width: 100%; 
+    height: 500px; /* Altura da imagem no desktop */
+    max-height: 550px;
+    object-fit: cover;
+    border-radius: 10px; 
+}
+
+.prev, .next {
+    display: none;
+}
+
+
+/* ---------------------------------------------------- */
+/* MEDIA QUERIES PARA RESPONSIVIDADE */
+/* ---------------------------------------------------- */
+
+/* --- 📱 CELULAR PEQUENO (Até 320px) --- */
+@media (max-width: 320px) {
+    /* Ajustes Gerais */
+    body {
+        padding: 10px;
+    }
+    .main-header h1 {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+
+    /* Botões */
+    .buttons-section {
+        flex-direction: column; 
+        gap: 10px; 
+        margin-top: 20px; 
+    }
+    .nav-button {
+        padding: 10px 20px;
+        font-size: 1.0em;
+        width: 90%; 
+    }
+
+    /* Carrossel (Embla) */
+    .carousel-section {
+        width: 100%;
+        padding: 15px; /* Ajuste do padding do container rosa */
+    }
+    .embla__viewport {
+        min-height: 300px; 
+    }
+    .embla__slide {
+        /* Slide ocupa 95% do viewport */
+        flex: 0 0 95%; 
+        margin-left: 5px;
+    }
+    .embla__slide__img {
+        height: 300px;
+        max-height: 300px;
+    }
+}
+
+/* --- 📱 CELULAR INTERMEDIÁRIO (Até 576px) --- */
+@media (max-width: 576px) {
+    /* Ajustes Gerais */
+    .main-header h1 {
+        font-size: 1.5em;
+        margin-bottom: 30px;
+    }
+
+    /* Botões */
+    .buttons-section {
+        flex-direction: column; 
+        gap: 15px; 
+        margin-top: 30px; 
+    }
+    .nav-button {
+        padding: 15px 30px;
+        font-size: 1.2em;
+        width: 80%; 
+    }
+
+    /* Carrossel (Embla) */
+    .carousel-section {
+        width: 100%;
+        max-width: none;
+        padding: 20px; /* Ajuste do padding do container rosa */
+    }
+    .embla__viewport {
+        min-height: 350px;
+    }
+    .embla__slide {
+        /* Slide ocupa 85% do viewport */
+        flex: 0 0 85%; 
+        margin-left: 10px;
+    }
+    .embla__slide__img {
+        height: 350px;
+        max-height: 400px;
+    }
+}
+
+/* --- 💻 TABLET (Entre 577px e 768px) --- */
+@media (min-width: 577px) and (max-width: 768px) {
+    /* Ajustes Gerais */
+    .main-header h1 {
+        font-size: 2.0em;
+    }
+    
+    /* Botões */
+    .buttons-section {
+        gap: 20px;
+    }
+    .nav-button {
+        padding: 18px 35px;
+        font-size: 1.3em;
+    }
+
+    /* Carrossel (Embla) */
+    .carousel-section {
+        width: 95%;
+        max-width: 760px;
+        padding: 25px; /* Ajuste do padding do container rosa */
+    }
+    .embla__viewport {
+        min-height: 450px;
+    }
+    .embla__slide {
+        /* Peek padrão para tablets */
+        flex: 0 0 80%; 
+        margin-left: 15px;
+    }
+    .embla__slide__img {
+        height: 450px;
+        max-height: 500px;
+    }
+}
