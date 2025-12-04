@@ -58,7 +58,7 @@ body {
 
 /* Estilo da Seção de Carrossel - O NOVO CONTAINER ROSA CLARO E ELEGANTE */
 .carousel-section {
-    /* REVERTIDO para 90% para telas grandes, conforme solicitado. */
+    /* Mantido 90% para telas grandes */
     width: 90%; 
     max-width: 800px;
     /* Centraliza e garante margem inferior para separar dos botões */
@@ -152,7 +152,7 @@ body {
         margin-top: 20px; 
     }
     .nav-button {
-        /* AJUSTE: Botões menores para 320px */
+        /* AJUSTE: Botões menores e mais compactos para 320px */
         padding: 8px 15px;
         font-size: 0.9em;
         width: 70%; 
@@ -161,15 +161,16 @@ body {
 
     /* Carrossel (Embla) - Tela 1 */
     .carousel-section {
-        /* ✅ CORREÇÃO: Redução para 85% para garantir que o background apareça no 320px */
-        width: 85%; 
+        /* CORREÇÃO FINAL: Reduzido para 80% para garantir uma margem lateral visível (20% de folga) */
+        width: 80%; 
         padding: 15px;
     }
     .embla__viewport {
         min-height: 250px; 
     }
     .embla__slide {
-        flex: 0 0 95%; 
+        /* Para 80% de largura do container, faz o slide ocupar 90% para dar um respiro interno */
+        flex: 0 0 90%; 
         margin-left: 5px;
     }
     .embla__slide__img {
@@ -210,7 +211,7 @@ body {
 
     /* Carrossel (Embla) - Tela 1 */
     .carousel-section {
-        /* Mantendo 90% para mostrar um pouco mais de borda que o 100% original */
+        /* CORREÇÃO FINAL: Reduzido para 90% para garantir uma margem lateral visível */
         width: 90%;
         max-width: none;
         padding: 20px;
@@ -255,6 +256,7 @@ body {
 
     /* Carrossel (Embla) - Tela 1 */
     .carousel-section {
+        /* CORREÇÃO FINAL: Reduzido para 90% para garantir uma margem lateral visível */
         width: 90%; 
         max-width: 760px;
         padding: 25px;
