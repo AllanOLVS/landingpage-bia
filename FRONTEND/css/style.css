@@ -58,13 +58,13 @@ body {
 
 /* Estilo da Seção de Carrossel - O NOVO CONTAINER ROSA CLARO E ELEGANTE */
 .carousel-section {
-    width: 90%;
+    /* REVERTIDO para 90% para telas grandes, conforme solicitado. */
+    width: 90%; 
     max-width: 800px;
-    margin-top: 0; 
-    margin-bottom: 0;
+    /* Centraliza e garante margem inferior para separar dos botões */
+    margin: 0 auto 30px auto; 
     
-    /* ESTILOS DO NOVO CONTAINER VISUAL */
-    background-color: #fff0f5; /* Rosa Claro Suave (Blush) */
+    background-color: #fff0f5; 
     padding: 30px; 
     border-radius: 20px; 
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
@@ -142,7 +142,7 @@ body {
     .main-header h1 {
         font-size: 1.2em;
         margin-bottom: 20px;
-        line-height: 1.2; /* Melhora a quebra de linha do título longo */
+        line-height: 1.2; 
     }
 
     /* Botões */
@@ -152,35 +152,37 @@ body {
         margin-top: 20px; 
     }
     .nav-button {
-        padding: 10px 20px;
-        font-size: 1.0em;
-        width: 80%; /* Ajuste para ter um pequeno respiro */
+        /* AJUSTE: Botões menores para 320px */
+        padding: 8px 15px;
+        font-size: 0.9em;
+        width: 70%; 
         margin: 0 auto;
     }
 
     /* Carrossel (Embla) - Tela 1 */
     .carousel-section {
-        width: 100%;
+        /* ✅ CORREÇÃO: Redução para 85% para garantir que o background apareça no 320px */
+        width: 85%; 
         padding: 15px;
     }
     .embla__viewport {
-        min-height: 250px; /* Redução de altura */
+        min-height: 250px; 
     }
     .embla__slide {
-        flex: 0 0 95%; /* Quase ocupa a tela toda */
+        flex: 0 0 95%; 
         margin-left: 5px;
     }
     .embla__slide__img {
-        height: 250px; /* Altura menor para telas muito pequenas */
+        height: 250px; 
     }
 
     /* GALERIA DE FOTOS (Tela 2) - UMA COLUNA */
     .gallery {
-        grid-template-columns: 1fr; /* Força 1 coluna em 320px */
+        grid-template-columns: 1fr; 
         padding: 10px;
     }
     .gallery img {
-        height: 250px; /* Altura ajustada */
+        height: 250px; 
     }
 }
 
@@ -208,7 +210,8 @@ body {
 
     /* Carrossel (Embla) - Tela 1 */
     .carousel-section {
-        width: 100%;
+        /* Mantendo 90% para mostrar um pouco mais de borda que o 100% original */
+        width: 90%;
         max-width: none;
         padding: 20px;
     }
@@ -216,7 +219,7 @@ body {
         min-height: 350px;
     }
     .embla__slide {
-        flex: 0 0 85%; /* Peek padrão para celular */
+        flex: 0 0 85%; 
         margin-left: 10px;
     }
     .embla__slide__img {
@@ -225,9 +228,8 @@ body {
     }
     
     /* GALERIA DE FOTOS (Tela 2) - UMA COLUNA */
-    /* Sobrescreve o max-width: 320px, mas mantém 1 coluna. */
     .gallery {
-        grid-template-columns: 1fr; /* Força 1 coluna */
+        grid-template-columns: 1fr; 
         padding: 15px;
     }
     .gallery img {
@@ -253,15 +255,15 @@ body {
 
     /* Carrossel (Embla) - Tela 1 */
     .carousel-section {
-        width: 95%;
+        width: 90%; 
         max-width: 760px;
         padding: 25px;
     }
     .embla__viewport {
-        min-height: 400px; /* Altura ajustada */
+        min-height: 400px; 
     }
     .embla__slide {
-        flex: 0 0 75%; /* Mais peek em tablet */
+        flex: 0 0 75%; 
         margin-left: 15px;
     }
     .embla__slide__img {
@@ -271,11 +273,11 @@ body {
     
     /* GALERIA DE FOTOS (Tela 2) - DUAS COLUNAS */
     .gallery {
-        grid-template-columns: repeat(2, 1fr); /* Duas colunas em tablets */
+        grid-template-columns: repeat(2, 1fr); 
         gap: 15px;
         padding: 20px;
     }
     .gallery img {
-        height: 250px; /* Altura ajustada para 2 colunas */
+        height: 250px; 
     }
 }
