@@ -162,7 +162,7 @@ body {
     /* Carrossel (Embla) - Tela 1 */
     .carousel-section {
         /* CORREÇÃO FINAL: Reduzido para 80% para garantir uma margem lateral visível (20% de folga) */
-        width: 80%; 
+        width: 80%;
         padding: 15px;
     }
     .embla__viewport {
@@ -182,6 +182,7 @@ body {
         grid-template-columns: 1fr; 
         padding: 10px;
     }
+    
     .gallery img {
         height: 250px; 
     }
@@ -281,5 +282,67 @@ body {
     }
     .gallery img {
         height: 250px; 
+    }
+}
+
+@media (max-width: 320px) {
+    body {
+        padding: 10px 0; /* Tira padding lateral do body para dar controle à section */
+    }
+
+    .carousel-section {
+        /* O SEGREDO: Largura de 85% garante que sobra 7.5% de cada lado */
+        width: 85%; 
+        margin: 0 auto 20px auto; /* Centraliza */
+        padding: 10px; /* Padding interno menor */
+        border-radius: 15px;
+    }
+    
+    .embla__viewport, .embla__slide__img {
+        height: 250px; /* Altura ajustada */
+    }
+}
+
+/* ---------------------------------------------------- */
+/* 2. CELULARES PADRÃO E GRANDES (321px até 480px) */
+/* Abrange o 420px que você mencionou */
+/* ---------------------------------------------------- */
+@media (min-width: 320px) and (max-width: 480px) {
+    .carousel-section {
+        /* AQUI: Define 88% para não grudar na borda, mostrando o fundo */
+        width: 68%; 
+        margin: 0 auto 30px auto;
+        padding: 15px;
+        border-radius: 18px;
+    }
+
+    .embla__viewport, .embla__slide__img {
+        height: 350px;
+    }
+
+    .main-header h1 {
+        font-size: 1.4em;
+        margin-bottom: 25px;
+    }
+}
+
+/* ---------------------------------------------------- */
+/* 3. TABLETS E TELAS INTERMEDIÁRIAS (481px até 779px) */
+/* ---------------------------------------------------- */
+@media (min-width: 481px) and (max-width: 779px) {
+    .carousel-section {
+        /* AQUI: Mantém 85% a 90% para ver o fundo rosa escuro nas laterais */
+        width: 90%; 
+        max-width: 600px; /* Limita para não ficar gigante */
+        margin: 0 auto 40px auto;
+        padding: 25px;
+    }
+
+    .embla__viewport, .embla__slide__img {
+        height: 450px;
+    }
+    
+    .main-header h1 {
+        font-size: 1.8em;
     }
 }
