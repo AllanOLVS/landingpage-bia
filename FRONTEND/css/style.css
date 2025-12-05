@@ -4,8 +4,8 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #fce4ec; 
-    color: #4a148c; 
+    background-color: #fce4ec;
+    color: #4a148c;
     text-align: center;
     margin: 0;
     padding: 20px;
@@ -22,7 +22,7 @@ body {
 .main-header h1 {
     font-size: 2.5em;
     margin-bottom: 40px;
-    color: #880e4f; 
+    color: #880e4f;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 900;
@@ -31,9 +31,9 @@ body {
 /* Estilo da Seção de Botões */
 .buttons-section {
     display: flex;
-    gap: 30px; 
-    margin-top: 50px; 
-    margin-bottom: 20px; 
+    gap: 30px;
+    margin-top: 50px;
+    margin-bottom: 20px;
     justify-content: center;
 }
 
@@ -59,22 +59,22 @@ body {
 /* Estilo da Seção de Carrossel - O NOVO CONTAINER ROSA CLARO E ELEGANTE */
 .carousel-section {
     /* Mantido 90% para telas grandes */
-    width: 90%; 
+    width: 90%;
     max-width: 800px;
     /* Centraliza e garante margem inferior para separar dos botões */
-    margin: 0 auto 30px auto; 
-    
-    background-color: #fff0f5; 
-    padding: 30px; 
-    border-radius: 20px; 
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); 
+    margin: 0 auto 30px auto;
+
+    background-color: #fff0f5;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* --- ESTILOS EMBLA CAROUSEL (LOOP E PEEK PADRÃO) --- */
 
 .embla__viewport {
     overflow: hidden;
-    min-height: 500px; 
+    min-height: 500px;
 }
 
 .embla__container {
@@ -84,9 +84,10 @@ body {
 
 .embla__slide {
     /* Desktop: 80% do viewport, cria o peek de 10% em cada lado */
-    flex: 0 0 80%; 
-    min-width: 0; 
-    margin-left: 20px; /* Espaço entre as imagens no desktop */
+    flex: 0 0 80%;
+    min-width: 0;
+    margin-left: 20px;
+    /* Espaço entre as imagens no desktop */
 }
 
 .embla__slide:first-child {
@@ -95,11 +96,12 @@ body {
 
 .embla__slide__img {
     display: block;
-    width: 100%; 
-    height: 500px; /* Altura da imagem no desktop */
+    width: 100%;
+    height: 500px;
+    /* Altura da imagem no desktop */
     max-height: 550px;
     object-fit: cover;
-    border-radius: 10px; 
+    border-radius: 10px;
 }
 
 /* ---------------------------------------------------- */
@@ -109,7 +111,7 @@ body {
 .gallery {
     display: grid;
     /* Padrão desktop: 3 colunas, mínimo de 300px */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     padding: 20px;
     max-width: 1200px;
@@ -118,7 +120,8 @@ body {
 
 .gallery img {
     width: 100%;
-    height: 300px; /* Altura fixa para as imagens */
+    height: 300px;
+    /* Altura fixa para as imagens */
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -135,28 +138,42 @@ body {
 
 /* --- 📱 CELULAR PEQUENO (Até 320px) --- */
 @media (max-width: 320px) {
+
     /* Ajustes Gerais */
     body {
         padding: 10px;
     }
+
     .main-header h1 {
-        font-size: 1.2em;
+        font-size: 1.4em;
         margin-bottom: 20px;
-        line-height: 1.2; 
+        line-height: 1.2;
     }
 
     /* Botões */
     .buttons-section {
-        flex-direction: column; 
-        gap: 10px; 
-        margin-top: 20px; 
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+        width: 100%;
+        /* Garante que o container ocupe a largura disponível */
+        box-sizing: border-box;
     }
+
     .nav-button {
-        /* AJUSTE: Botões menores e mais compactos para 320px */
-        padding: 8px 15px;
-        font-size: 0.9em;
-        width: 70%; 
+        /* AJUSTE RESPONSIVO: Ocupa toda a largura disponível do container */
+        width: 100%;
+        max-width: 280px;
+        /* Trava de segurança para não esticar demais se virar a tela */
+
+        /* Ajuste de toque e leitura */
+        padding: 12px 10px;
+        /* Mais altura para o dedo acertar o clique */
+        font-size: 1rem;
+        /* Tamanho legível (aprox 16px) */
+
         margin: 0 auto;
+        box-sizing: border-box;
     }
 
     /* Carrossel (Embla) - Tela 1 */
@@ -165,31 +182,38 @@ body {
         width: 80%;
         padding: 15px;
     }
+
     .embla__viewport {
-        min-height: 250px; 
+        min-height: 250px;
     }
+
     .embla__slide {
         /* Para 80% de largura do container, faz o slide ocupar 90% para dar um respiro interno */
-        flex: 0 0 90%; 
+        flex: 0 0 90%;
         margin-left: 5px;
     }
+
     .embla__slide__img {
-        height: 250px; 
+        height: 250px;
     }
 
     /* GALERIA DE FOTOS (Tela 2) - UMA COLUNA */
     .gallery {
-        grid-template-columns: 1fr; 
-        padding: 10px;
+        grid-template-columns: 1fr;
+        padding: 5px;
+        /* Menos padding na galeria para a foto ficar maior */
+        gap: 15px;
     }
-    
+
     .gallery img {
-        height: 250px; 
+        height: auto;
+        height: 250px;
     }
 }
 
 /* --- 📱 CELULAR INTERMEDIÁRIO (Até 576px) --- */
 @media (max-width: 576px) {
+
     /* Ajustes Gerais */
     .main-header h1 {
         font-size: 1.5em;
@@ -199,14 +223,15 @@ body {
 
     /* Botões */
     .buttons-section {
-        flex-direction: column; 
-        gap: 15px; 
-        margin-top: 30px; 
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 30px;
     }
+
     .nav-button {
         padding: 15px 30px;
         font-size: 1.2em;
-        width: 80%; 
+        width: 80%;
         margin: 0 auto;
     }
 
@@ -217,23 +242,27 @@ body {
         max-width: none;
         padding: 20px;
     }
+
     .embla__viewport {
         min-height: 350px;
     }
+
     .embla__slide {
-        flex: 0 0 85%; 
+        flex: 0 0 85%;
         margin-left: 10px;
     }
+
     .embla__slide__img {
         height: 350px;
         max-height: 400px;
     }
-    
+
     /* GALERIA DE FOTOS (Tela 2) - UMA COLUNA */
     .gallery {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
         padding: 15px;
     }
+
     .gallery img {
         height: 300px;
     }
@@ -241,15 +270,17 @@ body {
 
 /* --- 💻 TABLET (Entre 577px e 768px) --- */
 @media (min-width: 577px) and (max-width: 768px) {
+
     /* Ajustes Gerais */
     .main-header h1 {
         font-size: 2.0em;
     }
-    
+
     /* Botões */
     .buttons-section {
         gap: 20px;
     }
+
     .nav-button {
         padding: 18px 35px;
         font-size: 1.3em;
@@ -258,49 +289,84 @@ body {
     /* Carrossel (Embla) - Tela 1 */
     .carousel-section {
         /* CORREÇÃO FINAL: Reduzido para 90% para garantir uma margem lateral visível */
-        width: 90%; 
+        width: 90%;
         max-width: 760px;
         padding: 25px;
     }
+
     .embla__viewport {
-        min-height: 400px; 
+        min-height: 400px;
     }
+
     .embla__slide {
-        flex: 0 0 75%; 
+        flex: 0 0 75%;
         margin-left: 15px;
     }
+
     .embla__slide__img {
         height: 400px;
         max-height: 450px;
     }
-    
+
     /* GALERIA DE FOTOS (Tela 2) - DUAS COLUNAS */
     .gallery {
-        grid-template-columns: repeat(2, 1fr); 
+        grid-template-columns: repeat(2, 1fr);
         gap: 15px;
         padding: 20px;
     }
+
     .gallery img {
-        height: 250px; 
+        height: 250px;
     }
 }
 
 @media (max-width: 320px) {
     body {
-        padding: 10px 0; /* Tira padding lateral do body para dar controle à section */
+        padding: 10px 0;
+        /* Tira padding lateral do body para dar controle à section */
     }
 
     .carousel-section {
         /* O SEGREDO: Largura de 85% garante que sobra 7.5% de cada lado */
-        width: 85%; 
-        margin: 0 auto 20px auto; /* Centraliza */
-        padding: 10px; /* Padding interno menor */
+        width: 85%;
+        margin: 0 auto 20px auto;
+        /* Centraliza */
+        padding: 10px;
+        /* Padding interno menor */
         border-radius: 15px;
     }
-    
-    .embla__viewport, .embla__slide__img {
-        height: 250px; /* Altura ajustada */
+
+    .embla__viewport,
+    .embla__slide__img {
+        height: 250px;
+        /* Altura ajustada */
     }
+
+    .buttons-section {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+        width: 100%;
+        /* Garante que o container ocupe a largura disponível */
+        box-sizing: border-box;
+    }
+
+    .nav-button {
+        /* AJUSTE RESPONSIVO: Ocupa toda a largura disponível do container */
+        width: 100%;
+        max-width: 280px;
+        /* Trava de segurança para não esticar demais se virar a tela */
+
+        /* Ajuste de toque e leitura */
+        padding: 12px 10px;
+        /* Mais altura para o dedo acertar o clique */
+        font-size: 1rem;
+        /* Tamanho legível (aprox 16px) */
+
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
 }
 
 /* ---------------------------------------------------- */
@@ -310,19 +376,45 @@ body {
 @media (min-width: 320px) and (max-width: 480px) {
     .carousel-section {
         /* AQUI: Define 88% para não grudar na borda, mostrando o fundo */
-        width: 68%; 
+        width: 68%;
         margin: 0 auto 30px auto;
         padding: 15px;
         border-radius: 18px;
     }
 
-    .embla__viewport, .embla__slide__img {
+    .embla__viewport,
+    .embla__slide__img {
         height: 350px;
     }
 
     .main-header h1 {
         font-size: 1.4em;
         margin-bottom: 25px;
+    }
+
+    .buttons-section {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+        width: 100%;
+        /* Garante que o container ocupe a largura disponível */
+        box-sizing: border-box;
+    }
+
+    .nav-button {
+        /* AJUSTE RESPONSIVO: Ocupa toda a largura disponível do container */
+        width: 100%;
+        max-width: 280px;
+        /* Trava de segurança para não esticar demais se virar a tela */
+
+        /* Ajuste de toque e leitura */
+        padding: 12px 10px;
+        /* Mais altura para o dedo acertar o clique */
+        font-size: 1rem;
+        /* Tamanho legível (aprox 16px) */
+
+        margin: 0 auto;
+        box-sizing: border-box;
     }
 }
 
@@ -332,16 +424,18 @@ body {
 @media (min-width: 481px) and (max-width: 779px) {
     .carousel-section {
         /* AQUI: Mantém 85% a 90% para ver o fundo rosa escuro nas laterais */
-        width: 90%; 
-        max-width: 600px; /* Limita para não ficar gigante */
+        width: 90%;
+        max-width: 600px;
+        /* Limita para não ficar gigante */
         margin: 0 auto 40px auto;
         padding: 25px;
     }
 
-    .embla__viewport, .embla__slide__img {
+    .embla__viewport,
+    .embla__slide__img {
         height: 450px;
     }
-    
+
     .main-header h1 {
         font-size: 1.8em;
     }
